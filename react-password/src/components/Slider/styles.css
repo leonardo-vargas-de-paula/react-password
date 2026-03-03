@@ -1,0 +1,13 @@
+.slider{
+    display: flex;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 0.5rem;
+    
+}
+
+.lengthValue {
+    display: inline-block; 
+    width: 2ch; 
+    text-align: left; 
+}
