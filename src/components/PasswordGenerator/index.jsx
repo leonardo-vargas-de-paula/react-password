@@ -16,33 +16,6 @@ function PasswordGenerator() {
     return setSymbolLength(parseInt(target.value));
   };
 
-  //apenas de teste para usar o useEffect
-  useEffect(() => {
-    const draftPassword = [];
-
-    draftPassword.push("1");
-    draftPassword.push("2");
-    draftPassword.push("&");
-    draftPassword.push("*");
-    draftPassword.push("x");
-    draftPassword.push("y");
-    draftPassword.push("x");
-    draftPassword.push("y");
-    draftPassword.push("x");
-    draftPassword.push("y");
-    draftPassword.push("x");
-    draftPassword.push("y");
-
-    
-
-    setPassword(
-      draftPassword
-        .slice(0, passwordLength)
-        .sort(() => Math.random() - 0.5)
-        .join(""),
-    );
-  }, [passwordLength, digitLength, symbolLength]);
-
   const randomDigit = () => {
     const digits = "0123456789";
     return digits[Math.floor(Math.random() * digits.length)];
@@ -58,6 +31,34 @@ function PasswordGenerator() {
     const letter = letters[Math.floor(Math.random() * letters.length)];
     return (Math.random() >= 0.5) ? letter : letter.toUpperCase();
 };
+
+  //apenas de teste para usar o useEffect
+  useEffect(() => {
+    const draftPassword = [];
+
+    draftPassword.push(randomDigit());
+    draftPassword.push(randomDigit());
+    draftPassword.push(randomSymbol());
+    draftPassword.push(randomSymbol());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+    draftPassword.push(randomLetters());
+
+    
+
+    setPassword(
+      draftPassword
+        .slice(0, passwordLength)
+        .sort(() => Math.random() - 0.5)
+        .join(""),
+    );
+  }, [passwordLength, digitLength, symbolLength]);
+
 
   return (
     <>
