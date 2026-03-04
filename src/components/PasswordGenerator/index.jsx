@@ -16,6 +16,8 @@ function PasswordGenerator() {
     return setSymbolLength(parseInt(target.value));
   };
 
+  //eu faria isso provavelmente em um backend, 
+  //aqui está assmi para seguir a didatica do curso
   const randomDigit = () => {
     const digits = "0123456789";
     return digits[Math.floor(Math.random() * digits.length)];
