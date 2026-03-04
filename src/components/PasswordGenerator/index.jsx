@@ -33,12 +33,31 @@ function PasswordGenerator() {
     draftPassword.push("x");
     draftPassword.push("y");
 
+    
 
-    setPassword(draftPassword
-        .slice(0,passwordLength)
-        .sort(()=> Math.random()-0.5)
-        .join(""));
+    setPassword(
+      draftPassword
+        .slice(0, passwordLength)
+        .sort(() => Math.random() - 0.5)
+        .join(""),
+    );
   }, [passwordLength, digitLength, symbolLength]);
+
+  const randomDigit = () => {
+    const digits = "0123456789";
+    return digits[Math.floor(Math.random() * digits.length)];
+  };
+
+  const randomSymbol = () => {
+    const symbols = "#$()-+_*&%@!?°{}";
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  };
+
+  const randomLetters = () => {
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+    const letter = letters[Math.floor(Math.random() * letters.length)];
+    return (Math.random() >= 0.5) ? letter : letter.toUpperCase();
+};
 
   return (
     <>
