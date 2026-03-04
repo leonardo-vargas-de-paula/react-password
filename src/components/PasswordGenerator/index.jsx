@@ -38,19 +38,11 @@ function PasswordGenerator() {
   useEffect(() => {
     const draftPassword = [];
 
-    draftPassword.push(randomDigit());
-    draftPassword.push(randomDigit());
-    draftPassword.push(randomSymbol());
-    draftPassword.push(randomSymbol());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-    draftPassword.push(randomLetters());
-
+    draftPassword.push(...Array.from({length: digitLength},randomDigit));
+    draftPassword.push(...Array.from({length: symbolLength},randomSymbol));
+    draftPassword.push(...Array.from({length: passwordLength},randomLetters));
+    
+    
     
 
     setPassword(
@@ -74,7 +66,7 @@ function PasswordGenerator() {
       ></Slider>
       <Slider
         className="digitslength"
-        min={4}
+        min={0}
         max={64}
         value={digitLength}
         onChange={setDigitValue}
@@ -82,14 +74,14 @@ function PasswordGenerator() {
       ></Slider>
       <Slider
         className="symbol-length"
-        min={4}
+        min={0}
         max={64}
         value={symbolLength}
         onChange={setSymbolvalue}
         type="Symbols"
       ></Slider>
 
-      <h1>Senha: {password}</h1>
+      <h1 className="password-display">Senha: {password}</h1>
     </>
   );
 }
