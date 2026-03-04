@@ -1,21 +1,22 @@
-.slider{
-    display: flex;
-    justify-content: center;
-    align-items:flex-start;
-    gap: 0.5rem;
-    
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
 }
 
 .slider + .slider {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .lengthValue {
-    display: inline-block; 
-    width: 2ch; 
-    text-align: left; 
+  display: inline-block;
+  width: 2ch;
+  text-align: left;
 }
 
-.slider label{
-    width: 4rem;
+.slider label {
+  width: 4rem;
 }
+
+
