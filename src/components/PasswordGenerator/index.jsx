@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Slider from "../Slider";
+import "./styles.css";
 
 function PasswordGenerator() {
   const [password, setPassword] = useState("");
