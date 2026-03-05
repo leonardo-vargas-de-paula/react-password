@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import Slider from "../Slider";
+import PasswordBox from "../PasswordBox";
+import CopyPasswordButton from "../CopyPasswordButton";
 import "./styles.css";
 
 function PasswordGenerator() {
@@ -82,7 +84,8 @@ function PasswordGenerator() {
         type="Symbols"
       ></Slider>
 
-      <h1 className="password-display">Senha: {password}</h1>
+      <PasswordBox password={password}></PasswordBox>
+      <CopyPasswordButton password={password}></CopyPasswordButton>
     </>
   );
 }
